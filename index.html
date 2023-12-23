@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="opencss.css">
+</head>
+
+
+<body>
+
+    
+    <div class="padding">
+        <h2 class="h-2">INCREMENT & DECREMENT</h2>
+        <form action="" id="myForm">
+            <h1 id="count-el">0</h1>
+        
+            <!-- <input type="reset" onclick="reset11()" id="reset" value="Reset"> -->
+        </form>
+        <button id="button-1" onclick="increment()"> INCREMENT</button>
+        <button id="button-2" onclick="decrement()">DECREMENT</button>
+        <button id = "button-3" onclick="resetCounter()" id="reset">Reset</button>
+
+        <audio id="clickSound" src="mouse-click-153941.mp3"></audio>
+
+</body>
+<script >
+
+
+
+
+    
+      
+
+        function increment() {
+            count++;
+            countEl.innerText = count;
+            var snd = new Audio('mouse-click-153941.mp3')//wav is also supported
+     snd.play()//plays the sound
+        }
+
+        function decrement() {
+            count--;
+            countEl.innerText = count;
+            var snd = new Audio('mouse-click-153941.mp3')//wav is also supported
+     snd.play()//plays the sound
+        }
+
+        function resetCounter() {
+            count = 0;
+            countEl.innerText = count;
+            var snd = new Audio('button-124476.mp3')//wav is also supported
+     snd.play()//plays the sound
+        }
+    
+
+        let countEl = document.getElementById("count-el");
+        let count = 0;
+
+        document.getElementById("increment()").addEventListener("click", function() {
+            count++;
+            countEl.innerText = count;
+            playClickSound(); // Play click sound on increment
+        });
+
+        document.getElementById("decrement()").addEventListener("click", function() {
+            count--;
+            countEl.innerText = count;
+            playClickSound(); // Play click sound on decrement
+        });
+
+        document.getElementById("resetCounter()").addEventListener("click", function() {
+            count = 0;
+            countEl.innerText = count;
+            playClickSound(); // Play click sound on reset
+        });
+
+        // Function to play the click sound
+        function playClickSound() {
+            let clickSound = document.getElementById("clickSound");
+            clickSound.play();
+        }
+
+
+</script>
+
+</html>
